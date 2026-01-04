@@ -69,7 +69,7 @@ function CemberinAlani(yaricap, pi) {
 }
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
-console.log(CemberinAlani(15,pi));
+console.log(CemberinAlani(15, pi));
 /* 	GÖREV 3:
 	- Sayfanın en üstünde global değişken olarak tanımlanmış bir sayilar dizisi bulunmaktadır. Bu dizi içinde 0 ile 1000 arasında rasgele oluşturulmuş tam sayılar ve ondalıklı sayılar bulunmaktadır. Bu diziyi kullanarak aşağıdakileri uygulayın:
 		3a. enbuyuk ve enkucuk isminde 2 adet değişken tanımlayın ve sayilar dizisindeki en küçük sayı ile en büyük sayıyı bu değişkenlere atayın. (for döngüsü kullanın)
@@ -87,8 +87,6 @@ console.log(CemberinAlani(15,pi));
 		💡 İPUCU: Tekrar edilen sayıları ve kaç kere tekrar edildiğini kaydetmek için bir nesne tanımlamalısınız, bu görevi yapabilmek için en az 2 kere döngü yazmalısınız. Birinci döngüde hangi sayının kaç kere tekrar edildiğini tespit edip, 2. döngüde stringi oluşturup verilen diziye aktarmalısınız.
 */
 
-
-
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 console.log(sayilar.length);
 
@@ -102,17 +100,17 @@ let ucetambolunenler,
 
 // 3a çözümü
 
- enbuyuk = sayilar[0];
- enkucuk = sayilar[0];
-for (let i =1; i<sayilar.length; i++) {
-  if (sayilar[i]<enkucuk) {
-     enkucuk = sayilar[i];
-  } 
-for (let j = 1; j<sayilar.length ; j++) {
-  if (sayilar[j]>enbuyuk) {
-     enbuyuk = sayilar[j];
+enbuyuk = sayilar[0];
+enkucuk = sayilar[0];
+for (let i = 1; i < sayilar.length; i++) {
+  if (sayilar[i] < enkucuk) {
+    enkucuk = sayilar[i];
   }
-}
+  for (let j = 1; j < sayilar.length; j++) {
+    if (sayilar[j] > enbuyuk) {
+      enbuyuk = sayilar[j];
+    }
+  }
 }
 console.log(enbuyuk);
 console.log(enkucuk);
@@ -121,32 +119,48 @@ console.log(enkucuk);
 
 ucetambolunenler = [];
 sayilar.forEach((sayi) => {
-  if (sayi%3===0) {
+  if (sayi % 3 === 0) {
     ucetambolunenler.push(sayi);
   }
-} 
-);
+});
 console.log(ucetambolunenler);
-
 
 // 3c çözümü:
 
-ucebolunenlerintoplami = ucetambolunenler.reduce((acc,sayi) => acc+sayi,0);
+ucebolunenlerintoplami = ucetambolunenler.reduce((acc, sayi) => acc + sayi, 0);
 console.log(ucebolunenlerintoplami);
 
 // 3d çözümü
 
-besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi<500);
+besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500);
 console.log(besyuzdenkucuksayilar);
 
 // 3e çözümü
 
-siralisayilar = [...besyuzdenkucuksayilar].sort((a,b) => a-b);
+siralisayilar = [...besyuzdenkucuksayilar].sort((a, b) => a - b);
 console.log(siralisayilar);
 
 // 3f çözümü
 
-/* kodlar buraya */
+tekraredensayilar = [];
+let sayi3f = {};
+sayilar.forEach((sayi) => {
+  if (sayi3f[sayi] === undefined) {
+    sayi3f[sayi] = 1;
+  } else {
+    sayi3f[sayi]++;
+  }
+});
+for (let key in sayi3f) {
+  let tekrarSayisi = sayi3f[key];
+  if (tekrarSayisi > 1) {
+    tekraredensayilar.push(
+      `${key} sayısı ${tekrarSayisi} kere tekrar edilmiştir`,
+    );
+  }
+}
+
+console.log(tekraredensayilar);
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
