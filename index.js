@@ -51,7 +51,7 @@ console.log(KareninAlani(10));
 */
 
 function CemberinCevresi(yaricap) {
-  return 2*pi*yaricap;
+  return 2 * pi * yaricap;
 }
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -64,8 +64,8 @@ console.log(CemberinCevresi(5));
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(yaricap,pi) {
-  return Math.pow(yaricap,2)*pi;
+function CemberinAlani(yaricap, pi) {
+  return Math.pow(yaricap, 2) * pi;
 }
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -87,6 +87,8 @@ console.log(CemberinAlani(15,pi));
 		💡 İPUCU: Tekrar edilen sayıları ve kaç kere tekrar edildiğini kaydetmek için bir nesne tanımlamalısınız, bu görevi yapabilmek için en az 2 kere döngü yazmalısınız. Birinci döngüde hangi sayının kaç kere tekrar edildiğini tespit edip, 2. döngüde stringi oluşturup verilen diziye aktarmalısınız.
 */
 
+
+
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
 let ucetambolunenler,
@@ -99,7 +101,20 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+ enbuyuk = sayilar[0];
+ enkucuk = sayilar[0];
+for (let i =1; i<sayilar.length; i++) {
+  if (sayilar[i]<enkucuk) {
+     enkucuk = sayilar[i];
+  } 
+for (let j = 1; j<sayilar.length ; j++) {
+  if (sayilar[j]>enbuyuk) {
+     enbuyuk = sayilar[j];
+  }
+}
+}
+console.log(enbuyuk);
+console.log(enkucuk);
 
 // 3b çözümü:
 
