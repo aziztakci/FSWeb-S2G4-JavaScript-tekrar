@@ -90,6 +90,7 @@ console.log(CemberinAlani(15,pi));
 
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
+console.log(sayilar.length);
 
 let ucetambolunenler,
   enkucuk,
@@ -130,7 +131,8 @@ console.log(ucetambolunenler);
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce((acc,sayi) => acc+sayi,0);
+console.log(ucebolunenlerintoplami);
 
 // 3d çözümü
 
